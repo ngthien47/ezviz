@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+		/>
+
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+		/>
+		<link rel="stylesheet" href="styles.css" />
+		<title>Ezviz Vietnam</title>
+	</head>
+	<body>
+		<nav>
+			<div class="nav__header">
+				<div class="nav__logo">
+					<a href="index.html">
+						<img
+							src="assets/logo.png"
+							alt="logo"
+							class="logo-dark"
+						/>
+						<img
+							src="assets/logo.png"
+							alt="logo"
+							class="logo-white"
+						/>
+					</a>
+				</div>
+				<div class="nav__menu__btn" id="menu-btn">
+					<i class="ri-menu-line"></i>
+				</div>
+			</div>
+			<ul class="nav__links" id="nav-links">
+				<li><a href="#home">Giới thiệu</a></li>
+				<li><a href="#product">Nổi bật</a></li>
+				<li><a href="#categories">Sản phẩm</a></li>
+				<li><a href="#contact">Đăng ký</a></li>
+				<li><button class="btn">Mua ngay!</button></li>
+			</ul>
+		</nav>
+
+		<header class="section__container header__container" id="home">
+			<div class="header__image">
+				<img
+					src="assets/camera-wifi-ngoai-troi-2mp.png"
+					alt="header"
+				/>
+				<img
+					src="assets/header-bg.png"
+					alt="header_bg"
+					class="header-bg"
+				/>
+				<div class="header__image__content">
+					<h4>Giá: 4,999,000đ</h4>
+					<button class="btn">Thêm giỏ hàng</button>
+				</div>
+			</div>
+			<div class="header__content">
+				<h1>Camera<br />tốt nhất cửa hàng</h1>
+				<p>
+					EZVIZ LC1C là sự kết hợp giữa camera an ninh và hệ
+					thống chiếu sáng ngoài trời trong một thiết kế
+					thông minh, đáp ứng nhu cầu vừa an ninh vừa chiếu
+					sáng ban đêm trong sân, trên đường.
+				</p>
+			</div>
+		</header>
+
+		<section class="product" id="product">
+			<div class="section__container product__container">
+				<div class="product__grid">
+					<div class="product__image">
+						<img
+							src="assets/C6W-camera-quay-quet-EZVIZ.png"
+							alt="product"
+						/>
+					</div>
+					<div class="product__content">
+						<div class="product__card">
+							<h4>Camera Wifi Trong Nhà</h4>
+							<p>
+								Camera Wifi C6W - Độ sắc nét 4MP
+							</p>
+						</div>
+						<div class="product__card">
+							<h4>Giá: 1,890,000đ</h4>
+							<a href="#">Xem thêm</a>
+						</div>
+					</div>
+				</div>
+				<div class="product__btn">
+					<button class="btn">Thêm giỏ hàng</button>
+				</div>
+			</div>
+		</section>
+
+		<section
+			class="section__container store__container"
+			id="categories"
+		>
+			<h2>Sản Phẩm</h2>
+			<p>
+				Chúng tôi có đầy đủ các loại camera tốt nhất tại cửa
+				hàng, luôn cập nhật những mẫu mới nhất cho khách hàng.
+			</p>
+			<div class="swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="store__card">
+							<h4>C3X Dark-Fighter</h4>
+							<img
+								src="assets/c3x.png"
+								alt="store"
+							/>
+							<h3>Giá: 3,890,000đ</h3>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="store__card">
+							<h4>C6CN 1080P</h4>
+							<img
+								src="assets/c6cn.png"
+								alt="store"
+							/>
+							<h3>Giá: $1,290,000đ</h3>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="store__card">
+							<h4>C3N Outdoors</h4>
+							<img
+								src="assets/c3n.png"
+								alt="store"
+							/>
+							<h3>Giá: $1,099,000đ</h3>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="store__card">
+							<h4>C3W 1080P</h4>
+							<img
+								src="assets/c3w.png"
+								alt="store"
+							/>
+							<h3>Giá: 1,599,000đ</h3>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="store__card">
+							<h4>C4W 1080P</h4>
+							<img
+								src="assets/c4w.png"
+								alt="store"
+							/>
+							<h3>Giá: 2,690,000đ</h3>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="store__card">
+							<h4>C8C 1080P</h4>
+							<img
+								src="assets/c8c.png"
+								alt="store"
+							/>
+							<h3>Giá: 2,990,000đ</h3>
+						</div>
+					</div>
+				</div>
+				<!-- If we need pagination -->
+				<div class="swiper-pagination"></div>
+			</div>
+		</section>
+
+		<section class="section__container contact__container" id="contact">
+			<h2 class="section__header">Đăng Ký Khách Hàng</h2>
+			<div class="row">
+				<div class="col contact__information">
+					<div class="contact__icon">
+						<div class="icon">
+							<i class="fa-solid fa-phone"></i>
+						</div>
+						<div class="contact__details">
+							<span>Số điện thoại</span>
+							<span>028.38.685.689</span>
+						</div>
+					</div>
+
+					<div class="contact__icon">
+						<div class="icon">
+							<i class="fa-solid fa-envelope"></i>
+						</div>
+						<div class="contact__details">
+							<span>Email</span>
+							<span>info@nhaantoan.com</span>
+						</div>
+					</div>
+
+					<div class="contact__icon">
+						<div class="icon">
+							<i
+								class="fa-solid fa-location-dot"
+							></i>
+						</div>
+						<div class="contact__details">
+							<span>Địa chỉ</span>
+							<span
+								>Phường 15, Quận 11, TP.
+								HCM</span
+							>
+						</div>
+					</div>
+					<div class="col contact__social">
+						<a href="#"
+							><i
+								class="fa-brands fa-facebook-f"
+							></i
+						></a>
+						<a href="#"
+							><i class="fa-brands fa-twitter"></i
+						></a>
+						<a href="#"
+							><i class="fa-brands fa-instagram"></i
+						></a>
+						<a href="#"
+							><i
+								class="fa-brands fa-linkedin-in"
+							></i
+						></a>
+					</div>
+				</div>
+				<div class="contact__form">
+					<form class="contact__input">
+						<div class="input half-width">
+							<input
+								type="text"
+								name=""
+								required="required"
+								placeholder="Họ và tên"
+							/>
+						</div>
+						<div class="input half-width">
+							<input
+								type="email"
+								name=""
+								required="required"
+								placeholder="Địa chỉ Email"
+							/>
+						</div>
+						<div class="input full-width">
+							<input
+								type="text"
+								name=""
+								required="required"
+								placeholder="Số điện thoại"
+							/>
+						</div>
+						<div class="input full-width">
+							<textarea
+								required="required"
+								placeholder="Nội dung"
+							></textarea>
+						</div>
+						<div class="input full-width">
+							<button>Đăng ký</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<footer class="footer">
+			<div class="section__container footer__container">
+				<img src="assets/logo.png" alt="logo" />
+				<ul class="footer__socials">
+					<li>
+						<a href="#"
+							><i class="ri-facebook-fill"></i
+						></a>
+					</li>
+					<li>
+						<a href="#"
+							><i class="ri-twitter-fill"></i
+						></a>
+					</li>
+					<li>
+						<a href="#"
+							><i class="ri-instagram-fill"></i
+						></a>
+					</li>
+					<li>
+						<a href="#"
+							><i class="ri-linkedin-fill"></i
+						></a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+
+		<script src="https://unpkg.com/scrollreveal"></script>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		<script src="main.js"></script>
+	</body>
+</html>
