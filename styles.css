@@ -594,12 +594,12 @@ textarea::-webkit-scrollbar-thumb {
 	top: 2px;
 }
 
-.input button {
+.btn-submit {
 	width: 100%;
 	padding: 8px 16px;
 	font-size: 18px;
-	background-color: var(--primary-color);
-	color: var(--white);
+	background-color: var(--primary-color) !important;
+	color: var(--white) !important;
 	border: 1px solid transparent;
 	border-radius: 25px;
 	outline: none;
@@ -608,9 +608,9 @@ textarea::-webkit-scrollbar-thumb {
 	transition: 0.4s;
 }
 
-.input button:hover {
-	background-color: var(--primary-color-dark);
-	color: var(--white);
+.btn-submit:hover {
+	background-color: var(--primary-color-dark) !important;
+	color: var(--white) !important;
 	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
 	border: 1px solid var(--primary-color-dark);
 }

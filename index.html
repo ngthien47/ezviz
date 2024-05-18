@@ -20,6 +20,12 @@
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
 		/>
 		<link rel="stylesheet" href="styles.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css"
+		/>
+
+		<script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
 		<title>Ezviz Vietnam</title>
 	</head>
 	<body>
@@ -118,7 +124,7 @@
 			</p>
 			<div class="swiper">
 				<div class="swiper-wrapper">
-					<div class="swiper-slide">
+					<!-- <div class="swiper-slide">
 						<div class="store__card">
 							<h4>C3X Dark-Fighter</h4>
 							<img
@@ -177,8 +183,40 @@
 							/>
 							<h3>Giá: 2,990,000đ</h3>
 						</div>
-					</div>
+					</div> -->
 				</div>
+
+				<script>
+					const wrapper =
+						document.querySelector(".swiper-wrapper");
+					const url =
+						"https://docs.google.com/spreadsheets/d/1YcdmOO58AZNcJUtwHBi4W9DxV41Qf0lkn3Hw8AJcmv0/export?format=csv";
+					fetch(url)
+						.then((result) => result.text())
+						.then(function (csvtext) {
+							return csv().fromString(csvtext);
+						})
+						.then(function (csv) {
+							csv.forEach(function (row) {
+								const productHTML =
+								"<div class='swiper-slide'>" +
+									"<div class='store__card'>" +
+										"<h4>" +
+										row.TenSanPham +
+										"</h4>" +
+										"<img src='" +
+										row.HinhAnh +
+										"'>" +
+										"<h3>" +
+										row.Gia +
+										"</h3>" +
+									"</div>" +
+								"</div>";
+								wrapper.innerHTML += productHTML;
+							});
+						});
+				</script>
+
 				<!-- If we need pagination -->
 				<div class="swiper-pagination"></div>
 			</div>
@@ -242,11 +280,17 @@
 					</div>
 				</div>
 				<div class="contact__form">
-					<form class="contact__input">
+					<form
+						id="form"
+						class="contact__input"
+						name="google-sheet"
+						method="post"
+						action=""
+					>
 						<div class="input half-width">
 							<input
 								type="text"
-								name=""
+								name="Họ và tên"
 								required="required"
 								placeholder="Họ và tên"
 							/>
@@ -254,7 +298,7 @@
 						<div class="input half-width">
 							<input
 								type="email"
-								name=""
+								name="Địa chỉ Email"
 								required="required"
 								placeholder="Địa chỉ Email"
 							/>
@@ -262,19 +306,24 @@
 						<div class="input full-width">
 							<input
 								type="text"
-								name=""
+								name="Số điện thoại"
 								required="required"
 								placeholder="Số điện thoại"
 							/>
 						</div>
 						<div class="input full-width">
 							<textarea
+								name="Nội dung"
 								required="required"
 								placeholder="Nội dung"
 							></textarea>
 						</div>
 						<div class="input full-width">
-							<button>Đăng ký</button>
+							<input
+								type="submit"
+								value="Đăng ký"
+								class="btn-submit"
+							/>
 						</div>
 					</form>
 				</div>
@@ -311,6 +360,34 @@
 
 		<script src="https://unpkg.com/scrollreveal"></script>
 		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.js"></script>
 		<script src="main.js"></script>
+		<script>
+			const scriptURL =
+				"https://script.google.com/macros/s/AKfycbzVswBNtQqeh34myXetbP3pwTHzhQOjTdwtCAMQ-seSPdHFbu9cHJfRk49sEokfe2eN/exec";
+			const form = document.forms["google-sheet"];
+
+			form.addEventListener("submit", (e) => {
+				e.preventDefault();
+				fetch(scriptURL, {
+					method: "POST",
+					body: new FormData(form),
+				})
+					.then((response) =>
+						Swal.fire({
+							position: "center",
+							icon: "success",
+							title: "Thông tin của bạn đã được gửi!",
+							showConfirmButton: false,
+							timer: 1500,
+						}).then(function () {
+							location.reload();
+						})
+					)
+					.catch((error) =>
+						console.error("Error!", error.message)
+					);
+			});
+		</script>
 	</body>
 </html>
